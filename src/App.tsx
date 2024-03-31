@@ -1,9 +1,10 @@
 import "./App.css";
+import Heading from "./components/Heading";
 
 function App() {
   return (
     <>
-      <h1 className="text-center font-mono">.dungeon//remastered keeper</h1>
+      <Heading />
     </>
   );
 }
