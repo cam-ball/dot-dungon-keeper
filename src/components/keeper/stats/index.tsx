@@ -4,23 +4,27 @@ import { useState } from "react";
 import { StatDice } from "../../../utilities/constants";
 
 const initialState = {
-  build: "",
-  meta: "",
-  presence: "",
-  hands: "",
-  tilt: "",
-  rng: "",
+  build: null,
+  meta: null,
+  presence: null,
+  hands: null,
+  tilt: null,
+  rng: null,
 };
 
 const Stats = () => {
   const [showPopover, setShowPopover] = useState(false);
   const [currentStat, setCurrentStat] = useState<string | null>(null);
-  const [availableDice, setAvailableDice] = useState<string[]>(StatDice);
-  const [statAllocation, setStatAllocation] = useState<any>(initialState);
+  const [availableDice, setAvailableDice] = useState<string[]>([...StatDice]);
+  const [statAllocation, setStatAllocation] = useState<any>({
+    ...initialState,
+  });
 
   const selectStat = (statName: string) => {
-    setShowPopover(true);
-    setCurrentStat(statName);
+    if (!statAllocation[statName]) {
+      setShowPopover(true);
+      setCurrentStat(statName);
+    }
   };
 
   const selectDieForStat = (statName: string, die: string) => {
@@ -47,11 +51,12 @@ const Stats = () => {
         />
       ) : (
         <>
-          <h3>stats</h3>
-          <div className="flex flex-row justify-between">
+          <h3 className="font-mono">// S–T–A–T–S //</h3>
+          <div className="flex flex-row flex-wrap justify-between">
             {Object.entries(statAllocation).map(([key, value]) => {
               return (
                 <Stat
+                  key={key}
                   statName={key}
                   onClick={selectStat}
                   die={value as string}
@@ -59,6 +64,18 @@ const Stats = () => {
               );
             })}
           </div>
+          {currentStat && (
+            <button
+              className="mt-4 border-2 border-solid p-4"
+              onClick={() => {
+                setStatAllocation({ ...initialState });
+                setAvailableDice([...StatDice]);
+                setCurrentStat(null);
+              }}
+            >
+              reset
+            </button>
+          )}
         </>
       )}
     </div>
