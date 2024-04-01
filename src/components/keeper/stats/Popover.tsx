@@ -1,13 +1,24 @@
 type PopoverProps = {
   setShowPopover: (val: boolean) => void;
   currentStat: string;
+  availableDice: string[];
 };
 
-const Popover = ({ setShowPopover, currentStat }: PopoverProps) => {
+const StatValue = ({ die }: { die: string }) => {
+  return <div className="border-2 border-dashed p-4">{die}</div>;
+};
+
+const Popover = ({
+  setShowPopover,
+  currentStat,
+  availableDice,
+}: PopoverProps) => {
   return (
     <div className="flex flex-col justify-between">
-      <div>this is the popover!</div>
-      <div>the selected stat is {currentStat}</div>
+      <div>Set your {currentStat}</div>
+      {availableDice.map((die: string) => {
+        return <StatValue die={die} />;
+      })}
       <button
         onClick={() => {
           setShowPopover(false);

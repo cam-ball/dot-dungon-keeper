@@ -1,10 +1,12 @@
 import Stat from "./Stat";
 import Popover from "./Popover";
 import { useState } from "react";
+import { StatDice } from "../../../utilities/constants";
 
 const Stats = () => {
   const [showPopover, setShowPopover] = useState(false);
   const [currentStat, setCurrentStat] = useState<string | null>(null);
+  const [availableDice, setAvailableDice] = useState<[string]>(StatDice);
 
   const selectStat = (statName: string) => {
     setShowPopover(true);
@@ -17,6 +19,7 @@ const Stats = () => {
         <Popover
           setShowPopover={setShowPopover}
           currentStat={currentStat as string}
+          availableDice={availableDice}
         />
       ) : (
         <>
