@@ -7,7 +7,7 @@ const Heading = () => {
         <pre role="img" aria-label=".dungeon ascii logo">
           {AsciiLogo}
         </pre>
-        <h2 className="my-5 font-mono">.dungon//remastered keeper</h2>
+        <h2 className="my-5 font-mono">.dungeon//remastered keeper</h2>
       </div>
     </>
   );
