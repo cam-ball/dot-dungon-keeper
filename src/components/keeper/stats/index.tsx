@@ -41,7 +41,8 @@ const Stats = () => {
   };
 
   return (
-    <div className="w-100 min-h-52 basis-1/3 border-2 border-dashed p-8 text-center">
+    <div className="w-100 min-h-96 basis-1/3 border-2 border-solid p-8 text-center">
+      <h3 className="font-mono">// S–T–A–T–S //</h3>
       {showPopover ? (
         <Popover
           setShowPopover={setShowPopover}
@@ -51,7 +52,6 @@ const Stats = () => {
         />
       ) : (
         <>
-          <h3 className="font-mono">// S–T–A–T–S //</h3>
           <div className="flex flex-row flex-wrap justify-between">
             {Object.entries(statAllocation).map(([key, value]) => {
               return (

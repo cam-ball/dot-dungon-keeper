@@ -3,7 +3,7 @@ import Sync from "./sync";
 
 const Keeper = () => {
   return (
-    <div className="border-2 border-dashed p-8">
+    <div className="border-2 border-dashed p-8 uppercase">
       <div className="mb-8 flex flex-row justify-between">
         <Stats />
         <Sync />

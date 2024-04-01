@@ -8,8 +8,8 @@ const RestDice = ({ restDice }: RestDiceProps) => {
       <div className="mt-4 text-3xl">
         <hr />
       </div>
-      <div className="mt-4 text-3xl">
-        <h4>current rest dice: {restDice}</h4>
+      <div className="mt-4 text-xl">
+        <h4>rest dice: {restDice}</h4>
       </div>
     </>
   );

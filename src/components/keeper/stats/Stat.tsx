@@ -9,7 +9,7 @@ const Stat = ({ statName, onClick, die }: StatProps) => {
     <div className="w-1/2 p-2">
       <h4>{statName}</h4>
       <div
-        className="border-2 border-dashed p-4"
+        className="min-h-12 border border-solid p-3"
         onClick={() => {
           onClick(statName);
         }}
