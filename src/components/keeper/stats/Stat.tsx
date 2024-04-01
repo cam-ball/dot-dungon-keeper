@@ -1,16 +1,16 @@
 type StatProps = {
   statName: string;
-  setShowPopover: (val: boolean) => void;
+  onClick: (stat: string) => void;
 };
 
-const Stat = ({ statName, setShowPopover }: StatProps) => {
+const Stat = ({ statName, onClick }: StatProps) => {
   return (
     <div className="m-2 w-1/2">
       <h4>{statName}</h4>
       <div
         className="border-2 border-dashed p-4"
         onClick={() => {
-          setShowPopover(true);
+          onClick(statName);
         }}
       >
         {""}
