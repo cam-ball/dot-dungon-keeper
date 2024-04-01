@@ -1,9 +1,10 @@
 type StatProps = {
   statName: string;
   onClick: (stat: string) => void;
+  die: string;
 };
 
-const Stat = ({ statName, onClick }: StatProps) => {
+const Stat = ({ statName, onClick, die }: StatProps) => {
   return (
     <div className="m-2 w-1/2">
       <h4>{statName}</h4>
@@ -13,7 +14,7 @@ const Stat = ({ statName, onClick }: StatProps) => {
           onClick(statName);
         }}
       >
-        {""}
+        {die}
       </div>
     </div>
   );
