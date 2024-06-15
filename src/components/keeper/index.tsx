@@ -1,5 +1,6 @@
 import Stats from "./stats";
 import Sync from "./sync";
+import Profile from "./profile";
 
 const Keeper = () => {
   return (
@@ -7,7 +8,7 @@ const Keeper = () => {
       <div className="mb-8 flex flex-row justify-between">
         <Stats />
         <Sync />
-        <div className="basis-1/3">name and pfp</div>
+        <Profile />
       </div>
       <div className="mb-8 flex flex-row justify-between">
         <div>skills</div>
