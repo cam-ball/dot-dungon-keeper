@@ -18,7 +18,7 @@ const Health = ({ syncValue, handleSyncChange }: HealthProps) => {
   return (
     <>
       <div className="mt-4 text-7xl">
-        <h4 style={{ textShadow: "0 0 20px white" }}>{syncValue}</h4>
+        <h4 style={{ textShadow: "0 0 5px white" }}>{syncValue}</h4>
       </div>
       <div className="mt-4 flex flex-row justify-around">
         <button
