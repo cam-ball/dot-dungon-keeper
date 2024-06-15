@@ -41,7 +41,7 @@ const Profile = () => {
   const maskedImgUrl = imgUrl === defaultProfilePic ? "" : imgUrl;
 
   return (
-    <div className="min-h-52 basis-1/3 border-2 border-solid p-8 text-center">
+    <div className="relative min-h-52 basis-1/3 border-2 border-solid p-8 text-center">
       <h3 className="font-mono">// Y–O–U //</h3>
       {showPopover === "name" && (
         <ChangePopover
@@ -69,17 +69,14 @@ const Profile = () => {
               <img src={editIcon} className="ml-4 w-5" />
             </button>
           </div>
-          <div className="relative mt-4 inline-flex">
+          <div className="mt-4 inline-flex">
             <img src={imgUrl} className="max-h-64" />
             <button
               onClick={() => {
                 setShowPopover("image");
               }}
             >
-              <img
-                src={editIcon}
-                className="absolute bottom-0 left-0 ml-4 w-5"
-              />
+              <img src={editIcon} className="absolute bottom-2 left-2 w-5" />
             </button>
           </div>
         </>
