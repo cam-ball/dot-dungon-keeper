@@ -1,6 +1,7 @@
 import { useState, ChangeEvent } from "react";
 import editIcon from "./pen-to-square-regular.png";
 import defaultProfilePic from "./defaultProfilePic.png";
+import Button from "../../shared/Button";
 
 const ChangePopover = ({
   value,
@@ -21,14 +22,13 @@ const ChangePopover = ({
           setValue(e.target.value);
         }}
       />
-      <button
-        className="mt-4 border-2 border-solid p-2"
+      <Button
         onClick={() => {
           onSubmit(null);
         }}
       >
         confirm
-      </button>
+      </Button>
     </>
   );
 };

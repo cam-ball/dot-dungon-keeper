@@ -1,3 +1,5 @@
+import Button from "../../shared/Button";
+
 type PopoverProps = {
   setShowPopover: (val: boolean) => void;
   currentStat: string;
@@ -33,14 +35,13 @@ const Popover = ({
           );
         })}
       </div>
-      <button
-        className="mt-4 border-2 border-solid"
+      <Button
         onClick={() => {
           setShowPopover(false);
         }}
       >
         cancel
-      </button>
+      </Button>
     </div>
   );
 };

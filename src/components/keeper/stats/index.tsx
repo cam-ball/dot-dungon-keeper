@@ -2,6 +2,7 @@ import Stat from "./Stat";
 import Popover from "./Popover";
 import { useState } from "react";
 import { StatDice } from "../../../utilities/constants";
+import Button from "../../shared/Button";
 
 const initialState = {
   build: null,
@@ -65,8 +66,7 @@ const Stats = () => {
             })}
           </div>
           {currentStat && (
-            <button
-              className="mt-4 border-2 border-solid p-4"
+            <Button
               onClick={() => {
                 setStatAllocation({ ...initialState });
                 setAvailableDice([...StatDice]);
@@ -74,7 +74,7 @@ const Stats = () => {
               }}
             >
               reset
-            </button>
+            </Button>
           )}
         </>
       )}
