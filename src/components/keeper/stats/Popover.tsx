@@ -10,7 +10,9 @@ type PopoverProps = {
 const StatValue = ({ die, onClick }: { die: string; onClick: () => void }) => {
   return (
     <div className="w-1/2 p-2" onClick={onClick}>
-      <div className="min-h-12 border border-solid p-3">{die}</div>
+      <div className="min-h-12 cursor-pointer border border-solid p-3">
+        {die}
+      </div>
     </div>
   );
 };
@@ -24,7 +26,7 @@ const Popover = ({
   return (
     <div className="flex flex-col justify-between">
       <div>{currentStat}</div>
-      <div className="flex flex-row flex-wrap justify-between ">
+      <div className="flex flex-row flex-wrap justify-between">
         {availableDice.map((die: string) => {
           return (
             <StatValue
